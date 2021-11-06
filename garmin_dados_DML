@@ -1,0 +1,37 @@
+--- Fazendo a carga nas tabelas
+
+INSERT INTO atletas (NOME, PESO, ALTURA) VALUES ('Gustavo',90.0,1.88);
+INSERT INTO atletas (NOME, PESO, ALTURA) VALUES ('Luiz',81.0,1.83);
+INSERT INTO atletas (NOME, PESO, ALTURA) VALUES ('Ronaldo',72.0,1.76);
+SELECT* From atletas;
+
+INSERT INTO esporte (COD_ESPORTE, ESPORTE) VALUES (1,'CORRIDA');
+INSERT INTO esporte (COD_ESPORTE, ESPORTE) VALUES (2,'NATACAO');
+INSERT INTO esporte (COD_ESPORTE, ESPORTE) VALUES (3,'ROTINA GERAL');
+SELECT* From esporte;
+
+---INSERT CSV file to Table Metricas
+COPY metricas FROM '\\Mac\Home\Desktop\pessoal\Pos\ICA\Aulas\BI\Projeto\Base de banco de dados\Gus\Corrida\Gustavo_corrida_resumo.csv'
+DELIMITER ';';
+COPY metricas FROM '\\Mac\Home\Desktop\pessoal\Pos\ICA\Aulas\BI\Projeto\Base de banco de dados\Frach\Corrida\Luiz_corrida_resumo.csv'
+DELIMITER ';';
+COPY metricas FROM '\\Mac\Home\Desktop\pessoal\Pos\ICA\Aulas\BI\Projeto\Base de banco de dados\Gus\natacao\Gus_natacao_resumo.csv'
+DELIMITER ';';
+COPY metricas FROM '\\Mac\Home\Desktop\pessoal\Pos\ICA\Aulas\BI\Projeto\Base de banco de dados\Ronaldo\Corrida\Ronaldo_corrida_resumo.csv'
+DELIMITER ';';
+COPY metricas FROM '\\Mac\Home\Desktop\pessoal\Pos\ICA\Aulas\BI\Projeto\Base de banco de dados\Ronaldo\Natacao\Ronaldo_natacao_resumo.csv'
+DELIMITER ';';
+SELECT* From metricas;
+
+INSERT INTO registro (NOME, id_metrica, mes) VALUES 
+('Gustavo',1,'09-01-2020'), ('Gustavo',2,'10-01-2020'), ('Gustavo',3,'11-01-2020'), ('Gustavo',4,'12-01-2020'), ('Gustavo',5,'01-01-2021'), ('Gustavo',6,'02-01-2021'),
+('Gustavo',7,'03-01-2021'), ('Gustavo',8,'04-01-2021'), ('Gustavo',9,'05-01-2021'), ('Gustavo',10,'06-01-2021'), ('Gustavo',11,'07-01-2021'), ('Gustavo',12,'08-01-2021'),
+('Luiz',13,'10-01-2020'), ('Luiz',14,'11-01-2020'), ('Luiz',15,'12-01-2020'), ('Luiz',16,'01-01-2021'), ('Luiz',17,'02-01-2021'), ('Luiz',18,'03-01-2021'),
+('Luiz',19,'04-01-2021'), ('Luiz',20,'05-01-2021'), ('Luiz',21,'06-01-2021'), ('Luiz',22,'07-01-2021'), ('Luiz',23,'08-01-2021'), ('Luiz',24,'09-01-2021'),
+('Gustavo',25,'09-01-2020'), ('Gustavo',26,'10-01-2020'), ('Gustavo',27,'11-01-2020'), ('Gustavo',28,'12-01-2020'), ('Gustavo',29,'01-01-2021'), ('Gustavo',30,'02-01-2021'),
+('Gustavo',31,'04-01-2021'), ('Gustavo',32,'05-01-2021'), ('Gustavo',33,'06-01-2021'), ('Gustavo',34,'07-01-2021'), ('Gustavo',35,'08-01-2021'),
+('Ronaldo',36,'09-01-2020'), ('Ronaldo',37,'10-01-2020'), ('Ronaldo',38,'11-01-2020'), ('Ronaldo',39,'12-01-2020'), ('Ronaldo',40,'01-01-2021'), ('Ronaldo',41,'02-01-2021'),
+('Ronaldo',42,'03-01-2021'), ('Ronaldo',43,'04-01-2021'), ('Ronaldo',44,'05-01-2021'), ('Ronaldo',45,'06-01-2021'), ('Ronaldo',46,'07-01-2021'), ('Ronaldo',47,'08-01-2021'),
+('Ronaldo',48,'09-01-2020'), ('Ronaldo',49,'10-01-2020'), ('Ronaldo',50,'11-01-2020'), ('Ronaldo',51,'12-01-2020'), ('Ronaldo',52,'01-01-2021'), ('Ronaldo',53,'02-01-2021'),
+('Ronaldo',54,'04-01-2021'), ('Ronaldo',55,'05-01-2021'), ('Ronaldo',56,'06-01-2021'), ('Ronaldo',57,'07-01-2021'), ('Ronaldo',58,'08-01-2021');
+SELECT* From registro;

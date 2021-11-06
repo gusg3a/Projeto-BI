@@ -1,0 +1,33 @@
+--- Criando todas as tabelas DDL 
+
+CREATE TABLE atletas (
+nome VARCHAR(50) PRIMARY KEY,
+peso REAL,
+altura REAL
+);
+
+CREATE TABLE metricas (
+id_metrica int PRIMARY KEY,
+mes DATE, 
+quantidade INT,
+distancia_total REAL,
+tempo_toral REAL,
+ritmo REAL,
+cadencia INT,
+cod_esporte INT,
+FOREIGN KEY (cod_esporte) REFERENCES esporte (cod_esporte)
+);
+
+CREATE TABLE esporte (
+cod_esporte INT PRIMARY KEY,
+esporte VARCHAR(50)
+);
+
+CREATE TABLE registro (
+sequencia_registro serial PRIMARY KEY,
+nome VARCHAR(50),
+id_metrica INT,
+mes DATE,
+FOREIGN KEY (nome) REFERENCES atletas (nome),
+FOREIGN KEY (id_metrica) REFERENCES Metricas (id_metrica)
+);
